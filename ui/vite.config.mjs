@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
     // const env = loadEnv(mode, process.cwd());
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
     const workspaceId = process.env.VITE_WORKSPACE_ID;
-
+    console.log(workspaceId);
     return {
         base: './',
         plugins: [
@@ -61,9 +61,9 @@ export default defineConfig(({ mode }) => {
         },
         server: {
             proxy: {
-                '/salesorders': {
+                '/gw': {
                     changeOrigin: true,
-                    target: `https://https://port5173-workspaces-ws-4h9dw.eu10.applicationstudio.cloud.sap/salesorders`,
+                    target: `https://port6004-workspaces-ws-${workspaceId}.eu10.applicationstudio.cloud.sap/salesorders`,
                     secure: false
                 }
             },

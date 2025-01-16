@@ -6,10 +6,10 @@
   },
   "routes": [
     {
-      "source": "^/eccdev/(.*)$",
+      "source": "^/gw/(.*)$",
       "target": "$1",
       "destination": "eccdev",
-      "authenticationType": "xsuaa",
+      "authenticationType": "none",
       "csrfProtection": false
     },
     {

@@ -30,6 +30,9 @@ import { mdi } from 'vuetify/iconsets/mdi-svg';
 const router = useRouter();
 const { orders } = mockData();
 const {t} = useLocale();
+
+const headers = ref()
+
 const state = reactive({
     salesOrders: [],
     headers:[
