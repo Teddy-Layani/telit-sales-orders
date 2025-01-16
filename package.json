@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@sap/approuter": "17.1.0",
+    "@sap/html5-repo-mock": "2.1.10"
+  },
+  "scripts": {
+    "build-ui": "cd ui && if [ ! -d ${workspaceFolder}/telit-salesorders-vue/ui/node_modules/@vue/cli-service ] && [ ! -d ${workspaceFolder}/telit-salesorders-vue/node_modules/@vue/cli-service ]; then npm i; fi && npm run build"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "vue-i18n": "^10.0.5",
+    "vuetify": "^3.7.4"
+  }
+}

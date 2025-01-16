@@ -1,0 +1,59 @@
+{
+  "profiles": [
+    {
+      "viewId": "HEH05hUFWrUDy-zcXVVihw",
+      "docSize": 4590,
+      "_id": "SaIymzagNZhkmNSKNmmGbtUdN4HzC9Vs",
+      "attributes": {
+        "emails": [
+          {
+            "isPrimary": true,
+            "email": ""
+          }
+        ],
+        "firstName": "עובדי דלק - חברת הדלק הישראלית",
+        "lastName": "עובדי דלק - חברת הדלק הישראלית",
+        "primaryPhone": "",
+        "crmId": [
+          "1205213"
+        ],
+        "cdpId": [
+          "000000000742083190:Nf2dhW4xpGDetc4WSo6IACTz7WaoSWFZ"
+        ],
+        "masterDataId": [
+          "00163EBC-7535-1EEC-8CC9-28A45526AE93"
+        ],
+        "phones": [
+          {
+            "number": "",
+            "isPrimary": true
+          }
+        ],
+        "primaryCdpId": "000000000742083190:Nf2dhW4xpGDetc4WSo6IACTz7WaoSWFZ",
+        "primaryEmail": ""
+      },
+      "relationships": [],
+      "activityIndicators": [],
+      "calculatedIndicators": [],
+      "predictiveIndicators": [],
+      "segments": [],
+      "updatedTimestamp": 1723465749856,
+      "updated": "2024-08-12T12:29:09.856149Z",
+      "created": "2024-06-25T13:22:44.990589Z",
+      "lastSeen": "2024-08-12T12:29:09.0926186Z",
+      "firstSeen": "2024-06-25T13:22:43.8444181Z",
+      "privacy": {
+        "purposes": [],
+        "subscriptions": []
+      },
+      "milestones": [],
+      "matchRuleIds": [
+        "HN8yuyfrXjumCE_P9ikt3A",
+        "HBZEO_TBKnYXXCkXiKOdvQ",
+        "HGByFR45OpEyE7XqnY8Ltw"
+      ]
+    }
+  ],
+  "count": 1,
+  "totalCount": 1
+}

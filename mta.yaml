@@ -1,0 +1,80 @@
+_schema-version: "3.2"
+ID: telit-salesorders-vue
+version: 0.0.1
+modules:
+- name: telit-salesorders-vue-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: telit-salesorders-vue-destination-service
+    parameters:
+      content-target: true
+  - name: telit-salesorders-vue_html_repo_host
+    parameters:
+      service-key:
+        name: telit-salesorders-vue_html_repo_host-key
+  - name: uaa_telit-salesorders-vue
+    parameters:
+      service-key:
+        name: uaa_telit-salesorders-vue-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: telit_salesorders_vue_telit_salesorders_vue_html_repo_host
+          ServiceInstanceName: telit-salesorders-vue-html5-app-host-service
+          ServiceKeyName: telit-salesorders-vue_html_repo_host-key
+          sap.cloud.service: telit.salesorders.vue
+        - Authentication: OAuth2UserTokenExchange
+          Name: telit_salesorders_vue_uaa_telit_salesorders_vue
+          ServiceInstanceName: telit-salesorders-vue-xsuaa-service
+          ServiceKeyName: uaa_telit-salesorders-vue-key
+          sap.cloud.service: telit.salesorders.vue
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: telit-salesorders-vue_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: telit-salesorders-vue_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - ui-content.zip
+      name: telit-salesorders-app
+      target-path: resources/
+- name: telit-salesorders-app
+  type: html5
+  path: ui
+  build-parameters:
+    builder: custom
+    commands:
+    - npm install
+    - npm run build
+    supported-platforms: []
+resources:
+- name: telit-salesorders-vue-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 0.0.1
+    service: destination
+    service-name: telit-salesorders-vue-destination-service
+    service-plan: lite
+- name: telit-salesorders-vue_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: telit-salesorders-vue-html5-app-host-service
+    service-plan: app-host
+- name: uaa_telit-salesorders-vue
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: telit-salesorders-vue-xsuaa-service
+    service-plan: application

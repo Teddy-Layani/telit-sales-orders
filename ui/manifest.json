@@ -1,0 +1,11 @@
+{
+  "sap.app": {
+    "id": "salesorders",
+    "applicationVersion": {
+      "version": "0.0.1"
+    }
+  },
+  "sap.cloud": {
+    "service": "telit.salesorders.vue"
+  }
+}
